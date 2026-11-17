@@ -1,0 +1,67 @@
+/* Mobile first: una columna */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  padding: var(--section-pad) var(--pad);
+  border-top: var(--border);
+}
+
+/* Es un h2 por semántica, pero se ve como etiqueta: quitamos la negrita del navegador */
+.about__label {
+  font-weight: var(--weight-regular);
+}
+
+.about__text {
+  font-size: var(--text-big);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-big);
+}
+
+.about__accent {
+  color: var(--color-accent);
+}
+
+.about__facts {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.about__facts > div {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-ink);
+}
+
+.about__facts dd {
+  margin-top: var(--space-2);
+  font-size: var(--text-fact);
+  letter-spacing: var(--tracking-mark);
+  line-height: var(--leading-snug);
+}
+
+.about__facts dd.about__meta {
+  font-size: var(--text-mono);
+  letter-spacing: var(--tracking-mono);
+}
+
+@media (min-width: 860px) {
+  .about {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--gap);
+  }
+
+  .about__label {
+    grid-column: 1 / 4;
+  }
+
+  .about__text {
+    grid-column: 4 / 10;
+  }
+
+  .about__facts {
+    grid-column: 4 / 13;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    margin-top: var(--space-10);
+  }
+}

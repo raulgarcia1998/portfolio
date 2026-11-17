@@ -1,0 +1,56 @@
+/* Bloque oscuro final: invierte los colores del resto de la página */
+.contact {
+  padding: var(--section-pad) var(--pad);
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border-radius: var(--radius-section) var(--radius-section) 0 0;
+}
+
+.contact__label {
+  color: var(--color-ink-muted);
+}
+
+.contact__title {
+  margin: var(--space-6) 0 var(--space-12);
+  font-size: var(--text-contact);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-contact);
+  letter-spacing: var(--tracking-hero);
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.contact__link {
+  display: inline-block;
+  max-width: 100%;
+  padding: var(--btn-pad);
+  border: 1px solid var(--color-line-dark);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  overflow-wrap: anywhere; /* el email es largo: que no desborde en móvil */
+  transition:
+    background var(--duration-fast),
+    color var(--duration-fast);
+}
+
+.contact__link:hover,
+.contact__link--primary {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+.contact__link--primary:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* El anillo de foco verde no se vería sobre fondo oscuro: usamos el claro */
+.contact :focus-visible {
+  outline-color: var(--color-bg);
+}
