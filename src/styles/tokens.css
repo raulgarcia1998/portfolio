@@ -1,0 +1,61 @@
+/*
+  Tokens de diseño — dirección "Estudio 3D" (docs/propuestas/c-estudio-3d.html).
+  Ningún componente debe usar colores, tamaños o easings sueltos: todo sale de aquí.
+*/
+:root {
+  /* Color */
+  --color-bg: #e3e5df;
+  --color-bg-2: #d6d9d1;
+  --color-card: #eef0ea;
+  --color-ink: #14161a;
+  --color-ink-soft: #5d625c;
+  --color-line: #c3c7be;
+  --color-accent: #2e5e4e;
+  /* Variantes para la sección oscura de contacto */
+  --color-ink-muted: #8e948c;
+  --color-line-dark: #3a3e3a;
+
+  /* Tipografía */
+  --font-sans: 'Schibsted Grotesk Variable', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --text-base: 17px;
+  --text-mono: 12px;
+  --text-nav: 14px;
+  --text-lead: 19px;
+  --text-hero: clamp(56px, 9.5vw, 168px);
+  --text-h2: clamp(36px, 4.6vw, 72px);
+  --text-h3: clamp(34px, 3.6vw, 54px);
+  --text-big: clamp(24px, 2.6vw, 38px);
+  --text-contact: clamp(48px, 8vw, 132px);
+
+  --leading-tight: 0.9;
+  --leading-heading: 1;
+  --leading-body: 1.55;
+
+  --tracking-hero: -0.055em;
+  --tracking-heading: -0.04em;
+  --tracking-mono: 0.04em;
+
+  /* Espaciado y rejilla */
+  --pad: clamp(20px, 4.5vw, 64px);
+  --gap: 24px;
+  --section-pad: clamp(96px, 14vh, 160px);
+  --grid-columns: 12;
+
+  /* Formas */
+  --radius-card: 20px;
+  --radius-chip: 8px;
+  --radius-section: 28px;
+  --radius-pill: 100px;
+  --border: 1px solid var(--color-line);
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.25s;
+  --duration-base: 0.4s;
+  --duration-slow: 0.8s;
+
+  /* Breakpoint de referencia (las media queries no aceptan variables: usar 860px) */
+  --bp-desktop: 860px;
+}
