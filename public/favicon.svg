@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Colores de tokens.css: tinta y fondo. Un anillo como guiño al nudo del hero -->
+  <rect width="32" height="32" rx="8" fill="#14161A"/>
+  <circle cx="16" cy="16" r="7" fill="none" stroke="#E3E5DF" stroke-width="3.5"/>
+</svg>

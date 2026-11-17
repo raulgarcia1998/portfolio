@@ -1,0 +1,60 @@
+/*
+  Caja del nudo. El nudo va centrado en ella y su tamaño depende del alto de la caja,
+  tanto en el póster como en el 3D: por eso los dos coinciden.
+  Móvil: fila 1 de la rejilla del hero, entre las coordenadas y el nombre.
+  Escritorio: caja a la derecha, entre la navegación y el texto de presentación.
+  No captura el ratón: el texto sigue siendo seleccionable.
+*/
+.knot {
+  position: relative;
+  grid-row: 1;
+  min-height: var(--knot-min-height);
+  margin-top: var(--knot-offset-top);
+  pointer-events: none;
+}
+
+/* Póster cuadrado, alto = alto de la caja, centrado (puede sobresalir por los lados: es transparente) */
+.knot__poster {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+.knot__poster img {
+  width: 100%;
+  height: 100%;
+}
+
+.knot__live {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+/* Cuando el 3D ha pintado su primer fotograma: fundido de póster a 3D */
+.knot.is-live .knot__live {
+  opacity: 1;
+}
+
+.knot.is-live .knot__poster {
+  opacity: 0;
+}
+
+@media (min-width: 860px) {
+  .knot {
+    position: absolute;
+    top: var(--knot-top);
+    bottom: var(--knot-bottom);
+    left: 50%;
+    right: var(--pad);
+    z-index: 0;
+    grid-row: auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+}

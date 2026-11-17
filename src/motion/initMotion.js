@@ -40,6 +40,9 @@ function revealLines() {
       type: 'lines',
       mask: 'lines', // cada línea dentro de una "ventana" que la recorta
       autoSplit: true, // vuelve a partir si cambia el ancho o cargan las fuentes
+      // Solo partimos en líneas (las palabras quedan enteras), así que el lector de pantalla
+      // lee el texto tal cual. 'auto' añadiría aria-label a <p>, que no está permitido.
+      aria: 'none',
       onSplit: (self) =>
         gsap.from(self.lines, {
           yPercent: 110,

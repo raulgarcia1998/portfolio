@@ -91,9 +91,11 @@
   --blur-glass: 10px;
   --dot-size: 7px;
 
-  /* Nudo 3D en móvil: hueco bajo las coordenadas */
+  /* Caja del nudo 3D. Móvil: hueco bajo las coordenadas. Escritorio: entre la nav y el texto */
   --knot-offset-top: 144px;
   --knot-min-height: 220px;
+  --knot-top: 72px;
+  --knot-bottom: 200px;
 
   /* Movimiento */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

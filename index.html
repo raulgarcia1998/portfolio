@@ -9,6 +9,17 @@
       content="Portfolio de Raúl García Segura, desarrollador web junior con React y JavaScript. Lorca, Murcia. Disponible en remoto."
     />
     <meta name="theme-color" content="#E3E5DF" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- El póster del nudo es lo más grande de la primera pantalla: se pide antes de que cargue React.
+         Mismos srcset/sizes que en src/components/Knot.jsx -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      imagesrcset="/knot/knot-600.avif 600w, /knot/knot-1200.avif 1200w"
+      imagesizes="(min-width: 860px) 70vh, 50vh"
+      fetchpriority="high"
+    />
   </head>
   <body>
     <div id="root"></div>
