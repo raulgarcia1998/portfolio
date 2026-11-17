@@ -1,9 +1,43 @@
+import { lazy, Suspense, useEffect, useState } from 'react'
 import './Hero.css'
 
+// three.js va en un archivo aparte que solo se descarga cuando hace falta
+const KnotScene = lazy(() => import('./KnotScene.jsx'))
+
+function supportsWebGL() {
+  try {
+    const canvas = document.createElement('canvas')
+    return Boolean(canvas.getContext('webgl2') || canvas.getContext('webgl'))
+  } catch {
+    return false
+  }
+}
+
+// Espera a que el navegador esté libre para no retrasar la aparición del texto
+function whenIdle(callback) {
+  if ('requestIdleCallback' in window) {
+    const id = window.requestIdleCallback(callback, { timeout: 1500 })
+    return () => window.cancelIdleCallback(id)
+  }
+  const id = window.setTimeout(callback, 300)
+  return () => window.clearTimeout(id)
+}
+
 export default function Hero() {
+  const [showScene, setShowScene] = useState(false)
+
+  useEffect(() => {
+    if (!supportsWebGL()) return
+    return whenIdle(() => setShowScene(true))
+  }, [])
+
   return (
     <section id="inicio" className="hero" aria-labelledby="hero-title">
-      {/* Aquí irá el nudo 3D (paso posterior), detrás del texto */}
+      {showScene && (
+        <Suspense fallback={null}>
+          <KnotScene />
+        </Suspense>
+      )}
       <p className="hero__coords mono">
         37.67° N, 1.70° W
         <br />

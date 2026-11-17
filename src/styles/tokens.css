@@ -90,11 +90,16 @@
   --blur-glass: 10px;
   --dot-size: 7px;
 
+  /* Nudo 3D en móvil: hueco bajo las coordenadas */
+  --knot-offset-top: 144px;
+  --knot-min-height: 220px;
+
   /* Movimiento */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 0.25s;
   --duration-base: 0.4s;
   --duration-slow: 0.8s;
+  --duration-reveal: 1.2s;
 
   /* Breakpoint de referencia (las media queries no aceptan variables: usar 860px) */
   --bp-desktop: 860px;

@@ -1,0 +1,31 @@
+/*
+  Móvil: el canvas ocupa solo el hueco libre entre las coordenadas y el nombre
+  (fila 1 de la rejilla del hero). Así el nudo nunca tapa texto, sea cual sea el alto de la pantalla.
+  Escritorio: ocupa todo el hero, detrás del texto.
+  En ambos casos no captura el ratón: el texto sigue siendo seleccionable.
+*/
+.knot-scene {
+  position: relative;
+  grid-row: 1;
+  min-height: var(--knot-min-height);
+  margin-top: var(--knot-offset-top);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-reveal) var(--ease-out);
+}
+
+/* Aparece suavemente cuando three.js ha terminado de cargar, en vez de "saltar" */
+.knot-scene.is-ready {
+  opacity: 1;
+}
+
+@media (min-width: 860px) {
+  .knot-scene {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    grid-row: auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+}
