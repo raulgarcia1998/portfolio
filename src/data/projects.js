@@ -1,6 +1,9 @@
 /*
   Proyectos del portfolio. Añadir un proyecto = añadir un objeto a este array.
   Datos sacados de docs/BRIEF.md. No inventar nada: si falta algo, dejarlo en null.
+
+  Imagen: deja la captura original en /capturas, ejecuta `npm run images`
+  y copia aquí el ancho y alto que imprime.
 */
 export const projects = [
   {
@@ -15,6 +18,14 @@ export const projects = [
     role: 'En solitario',
     liveUrl: 'https://muebles-purias.vercel.app/',
     repoUrl: 'https://github.com/raulgarcia1998/muebles_purias',
-    image: null, // se añade en el paso de la sección de proyectos (AVIF/WebP)
+    image: {
+      name: 'muebles-purias', // archivos en /public/proyectos/muebles-purias-800.avif, etc.
+      width: 1899,
+      height: 908,
+      alt: 'Página de inicio de la web de Muebles Purias: una cocina oscura con el titular «La cocina que ya tienes en la cabeza».',
+    },
   },
 ]
+
+// Muestra el bloque "Proyecto 0X · En desarrollo" al final de la lista. Ponlo a false si no hay ninguno en marcha.
+export const projectInProgress = true

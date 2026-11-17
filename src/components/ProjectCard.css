@@ -1,0 +1,131 @@
+/* Mobile first: información arriba, captura debajo */
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: var(--color-card);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.project__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding: var(--card-pad);
+}
+
+.project__name {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+}
+
+.project__facts {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.project__facts dt {
+  margin-bottom: var(--space-1);
+}
+
+.project__facts dd {
+  max-width: 44ch;
+}
+
+.project__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.project__chips li {
+  padding: var(--chip-pad);
+  background: var(--color-bg);
+  border: var(--border);
+  border-radius: var(--radius-chip);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.project__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+/* Botón píldora. El secundario es solo borde; el principal, relleno de tinta */
+.project__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--btn-pad);
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    background var(--duration-fast),
+    color var(--duration-fast),
+    border-color var(--duration-fast);
+}
+
+.project__btn:hover {
+  transform: translateY(-2px);
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.project__btn--primary {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.project__btn--primary:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Captura asomando desde la esquina inferior derecha, como una ventana de navegador */
+.project__shot {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-2);
+  overflow: hidden;
+}
+
+.project__shot img {
+  position: absolute;
+  top: var(--shot-inset);
+  left: var(--shot-inset);
+  width: calc(100% - var(--shot-inset));
+  height: calc(100% - var(--shot-inset));
+  object-fit: cover;
+  object-position: top left;
+  border-top-left-radius: var(--radius-shot);
+  box-shadow: var(--shadow-shot);
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+/* Solo en dispositivos con ratón: en móvil el hover se quedaría "pegado" al tocar */
+@media (hover: hover) {
+  .project:hover .project__shot img {
+    transform: translate(-10px, -10px);
+  }
+}
+
+@media (min-width: 860px) {
+  .project {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .project__shot {
+    aspect-ratio: auto;
+    min-height: 420px;
+  }
+}
