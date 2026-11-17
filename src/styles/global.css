@@ -51,6 +51,24 @@ button {
   color: var(--color-ink-soft);
 }
 
+/* Enlace para saltar la navegación con teclado: solo visible al recibir el foco */
+.skip-link {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: var(--z-skip);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
 /* Texto solo para lectores de pantalla */
 .sr-only {
   position: absolute;

@@ -1,0 +1,79 @@
+/* Mobile first: todo a ancho completo, texto abajo y aire arriba para el 3D */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: end;
+  row-gap: var(--space-6);
+  padding: 0 var(--pad) var(--space-12);
+  overflow: hidden;
+}
+
+.hero__coords {
+  position: absolute;
+  top: var(--space-24);
+  right: var(--pad);
+  text-align: right;
+}
+
+.hero__title {
+  grid-column: 1 / -1;
+  font-size: var(--text-hero);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-hero);
+}
+
+.hero__title-soft {
+  color: var(--color-ink-soft);
+  font-weight: var(--weight-regular);
+}
+
+.hero__aside {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--space-5);
+}
+
+.hero__lead {
+  font-size: var(--text-lead);
+  line-height: var(--leading-lead);
+  max-width: 34ch;
+}
+
+/* Punto verde de "disponible" */
+.hero__avail {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hero__avail::before {
+  content: '';
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 var(--space-1) color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+@media (min-width: 860px) {
+  /* La rejilla de 12 columnas solo cuando hay ancho para ella.
+     minmax(0, 1fr) evita que un texto largo ensanche una columna y desborde la página */
+  .hero {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--gap);
+    align-items: end;
+    row-gap: 0;
+  }
+
+  .hero__title {
+    grid-column: 1 / 9;
+  }
+
+  .hero__aside {
+    grid-column: 9 / 13;
+    padding-bottom: 0.6em;
+  }
+}

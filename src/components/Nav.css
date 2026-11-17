@@ -1,0 +1,55 @@
+/* Mobile first: en móvil solo se ve el botón de Contacto */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-nav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-5) var(--pad);
+}
+
+.nav__mark {
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-mark);
+  text-decoration: none;
+}
+
+.nav__pill {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  background: color-mix(in srgb, var(--color-card) 80%, transparent);
+  backdrop-filter: blur(var(--blur-glass));
+  border: var(--border);
+  border-radius: var(--radius-pill);
+}
+
+.nav__link {
+  display: none;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-nav);
+  text-decoration: none;
+  transition: background var(--duration-fast);
+}
+
+.nav__link:hover {
+  background: var(--color-bg-2);
+}
+
+.nav__link--primary {
+  display: block;
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.nav__link--primary:hover {
+  background: var(--color-accent);
+}
+
+@media (min-width: 860px) {
+  .nav__link {
+    display: block;
+  }
+}
