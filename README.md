@@ -2,7 +2,7 @@
 
 Portfolio personal de desarrollador web junior.
 
-**Web publicada:** _pendiente de publicar_ <!-- TODO: añadir la URL de Vercel -->
+**Web publicada:** https://raulgarciasegura.vercel.app
 
 ## Stack
 
