@@ -5,7 +5,7 @@ export default function SectionHead({ label, title, titleId }) {
   return (
     <div className="section-head">
       <p className="section-head__label mono">{label}</p>
-      <h2 id={titleId} className="section-head__title">
+      <h2 id={titleId} className="section-head__title" data-reveal="lines">
         {title}
       </h2>
     </div>

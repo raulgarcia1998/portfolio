@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="contact" aria-labelledby="contacto-title">
       <p className="contact__label mono">03 — Contacto</p>
-      <h2 id="contacto-title" className="contact__title">
+      <h2 id="contacto-title" className="contact__title" data-reveal="lines">
         ¿Tienes un puesto
         <br />
         para mí?

@@ -10,7 +10,7 @@ export default function About() {
         02 — Sobre mí
       </h2>
 
-      <p className="about__text">
+      <p className="about__text" data-reveal="lines">
         Perseverante y resolutivo. Busco mi primer puesto para crecer dentro de un equipo. Fuera del código:{' '}
         <span className="about__accent">arte, videojuegos, cine y techno.</span>
       </p>

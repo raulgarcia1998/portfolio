@@ -9,7 +9,18 @@
   padding: var(--space-5) var(--pad);
 }
 
+/* Cápsula translúcida compartida: el nombre y el menú se leen pase lo que pase por debajo
+   (la captura oscura del proyecto, el nudo 3D, la sección de contacto...) */
+.nav__mark,
+.nav__pill {
+  background: color-mix(in srgb, var(--color-card) 80%, transparent);
+  backdrop-filter: blur(var(--blur-glass));
+  border: var(--border);
+  border-radius: var(--radius-pill);
+}
+
 .nav__mark {
+  padding: var(--mark-pad);
   font-weight: var(--weight-bold);
   letter-spacing: var(--tracking-mark);
   text-decoration: none;
@@ -19,10 +30,6 @@
   display: flex;
   gap: var(--space-1);
   padding: var(--space-1);
-  background: color-mix(in srgb, var(--color-card) 80%, transparent);
-  backdrop-filter: blur(var(--blur-glass));
-  border: var(--border);
-  border-radius: var(--radius-pill);
 }
 
 .nav__link {

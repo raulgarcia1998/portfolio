@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
+import { whenIdle } from '../utils/whenIdle.js'
 import './Hero.css'
 
 // three.js va en un archivo aparte que solo se descarga cuando hace falta
@@ -11,16 +12,6 @@ function supportsWebGL() {
   } catch {
     return false
   }
-}
-
-// Espera a que el navegador esté libre para no retrasar la aparición del texto
-function whenIdle(callback) {
-  if ('requestIdleCallback' in window) {
-    const id = window.requestIdleCallback(callback, { timeout: 1500 })
-    return () => window.cancelIdleCallback(id)
-  }
-  const id = window.setTimeout(callback, 300)
-  return () => window.clearTimeout(id)
 }
 
 export default function Hero() {

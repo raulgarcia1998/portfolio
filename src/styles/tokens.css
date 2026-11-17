@@ -78,6 +78,7 @@
 
   /* Botones y etiquetas */
   --btn-pad: 14px 22px;
+  --mark-pad: 10px 18px; /* misma altura que la cápsula del menú */
   --chip-pad: 3px 10px;
 
   /* Captura de proyecto */
